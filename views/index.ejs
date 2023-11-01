@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rehber</title>
+    <!-- Bootstrap CSS ekleyin -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-4">Rehber</h1>
+      <form action="/" method="POST" class="mt-4">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Ad"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <input
+                type="text"
+                name="surname"
+                class="form-control"
+                placeholder="Soyad"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <input
+                type="text"
+                name="phone"
+                class="form-control"
+                placeholder="Telefon"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <button type="submit" class="btn btn-primary">Kişi Ekle</button>
+          </div>
+        </div>
+      </form>
+      <hr />
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="table-reponsive">
+            <table class="table table-bordered table-stripe">
+              <thead>
+                <tr>
+                  <th>Ad</th>
+                  <th>Soyad</th>
+                  <th>Telefon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% contacts.forEach((contact) => { %>
+                <tr>
+                  <td><%= contact.name %></td>
+                  <td><%= contact.surname %></td>
+                  <td><%= contact.phone %></td>
+                </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS ve Popper.js ekleyin -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
